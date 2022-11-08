@@ -22,9 +22,9 @@ fail=`echo $variable | cut -d' ' -f12`
 echo $success $fail
 if [[ $success == 5 && $fail == 0 ]] 
 then 
-    echo "Test Successful";
+    echo "Test Successful" > ../../../tests/timer-aws-kinesis-it-test.result;
 else
-    echo "Test failed";
+    echo "Test failed"; ../../../tests/timer-aws-kinesis-it-test.result;
 fi
 
 jbang run -Dcamel.jbang.version=$camel_version camel@apache/camel stop timer-aws-kinesis
