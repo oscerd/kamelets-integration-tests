@@ -13,15 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-tests:
-	mkdir tests
-	cd aws/aws-s3/source/ && \
-	./aws-s3-log-it-test.sh 3.20.0-SNAPSHOT
-	cd aws/aws-s3/sink/ && \
-	./timer-aws-s3-it-test.sh 3.20.0-SNAPSHOT
-	cd aws/aws-kinesis/source/ && \
-	./aws-kinesis-log-it-test.sh 3.20.0-SNAPSHOT
-	cd aws/aws-kinesis/sink/ && \
-	./timer-aws-kinesis-it-test.sh 3.20.0-SNAPSHOT
-	./scripts/results.sh
-	rm -rf tests
+#!/bin/bash
+for f in tests/*.result ;  do FILENAME=`basename ${f%%.*}`; echo ${FILENAME} -- $(cat ${f}); done
