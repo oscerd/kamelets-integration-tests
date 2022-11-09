@@ -23,5 +23,9 @@ tests:
 	./aws-kinesis-log-it-test.sh 3.20.0-SNAPSHOT
 	cd aws/aws-kinesis/sink/ && \
 	./timer-aws-kinesis-it-test.sh 3.20.0-SNAPSHOT
+	cd aws/aws-sqs/source/ && \
+	./aws-sqs-log-it-test.sh 3.20.0-SNAPSHOT
+	cd aws/aws-sqs/sink/ && \
+	./timer-aws-sqs-it-test.sh 3.20.0-SNAPSHOT
 	./scripts/results.sh
 	rm -rf tests
