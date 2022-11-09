@@ -27,5 +27,7 @@ tests:
 	./aws-sqs-log-it-test.sh 3.20.0-SNAPSHOT
 	cd aws/aws-sqs/sink/ && \
 	./timer-aws-sqs-it-test.sh 3.20.0-SNAPSHOT
+	cd aws/aws-sqs-fifo/sink/ && \
+	./timer-aws-sqs-fifo-it-test.sh 3.20.0-SNAPSHOT
 	./scripts/results.sh
 	rm -rf tests
