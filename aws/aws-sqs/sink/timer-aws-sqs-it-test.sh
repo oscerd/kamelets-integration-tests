@@ -24,7 +24,7 @@ if [[ $success == 5 && $fail == 0 ]]
 then 
     echo "Test Successful" > ../../../tests/timer-aws-sqs-it-test.result ;
 else
-    echo "Test failed" ../../../tests/timer-aws-sqs-it-test.result ;
+    echo "Test failed" > ../../../tests/timer-aws-sqs-it-test.result ;
 fi
 
 jbang run -Dcamel.jbang.version=$camel_version camel@apache/camel stop timer-aws-sqs
